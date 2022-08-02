@@ -20,6 +20,11 @@ public class player extends Actor
         moveAround();
         checkFalling();
         youLost();
+        
+    if (isTouching(plataforma.class))
+    {
+        Greenfoot.playSound("splash.wav");
+    }
     }
     private void fall()
     {
@@ -47,6 +52,7 @@ public class player extends Actor
             fall();
         }
     }
+   
     public void youLost()
     {
         if(getY() == 599)
